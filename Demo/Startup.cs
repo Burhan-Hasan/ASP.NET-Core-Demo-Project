@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace Demo
 {
@@ -37,6 +38,14 @@ namespace Demo
             services.AddMvc();
         }
 
+        private static void Developer(IApplicationBuilder app)
+        {
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Burhan Hasan");
+            });
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
@@ -52,6 +61,9 @@ namespace Demo
             // установка консоли для вывода лога
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+
+            app.Map("/Developer", Developer);
 
             // если приложение в процессе разработки
             if (env.IsDevelopment())
@@ -69,13 +81,14 @@ namespace Demo
             app.UseStaticFiles();
 
             // Установка компонентов MVC для обработки запроса
-            
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
             /*
              Причем важно, что чтобы использовать некоторые сервисы, их вначале надо зарегистрировать. 
              Так, мы не смогли бы использовать метод app.UseMvc() в методе Configure, 
