@@ -62,6 +62,7 @@ namespace Demo
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseToken();
 
             app.Map("/Developer", Developer);
 
