@@ -7,3 +7,12 @@ C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\Demo\o
 C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\Demo\obj\Debug\netcoreapp1.1\Demo.AssemblyInfo.cs
 C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\Demo\obj\Debug\netcoreapp1.1\Demo.dll
 C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\Demo\obj\Debug\netcoreapp1.1\Demo.pdb
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\bin\Debug\netcoreapp1.1\Demo.deps.json
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\bin\Debug\netcoreapp1.1\Demo.runtimeconfig.json
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\bin\Debug\netcoreapp1.1\Demo.runtimeconfig.dev.json
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\bin\Debug\netcoreapp1.1\Demo.dll
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\bin\Debug\netcoreapp1.1\Demo.pdb
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\obj\Debug\netcoreapp1.1\Demo.csprojResolveAssemblyReference.cache
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\obj\Debug\netcoreapp1.1\Demo.AssemblyInfo.cs
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\obj\Debug\netcoreapp1.1\Demo.dll
+C:\Users\Burhan\OneDrive\Developing\GitHub\ASP.NET-Core-Demo-Project\Demo\obj\Debug\netcoreapp1.1\Demo.pdb

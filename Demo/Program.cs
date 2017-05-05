@@ -11,8 +11,14 @@ namespace Demo
     {
         public static void Main(string[] args)
         {
+            /*
+             В методе Main для создания хоста веб-приложения используется 
+             класс WebHostBuilder из пространства имен Microsoft.AspNetCore.Hosting. 
+             С помощью последовательного вызова цепочки методов у 
+             WebHostBuilder инициализирует веб-сервер для развертывания веб-приложения.
+             */
             var host = new WebHostBuilder()
-                .UseKestrel()
+                .UseKestrel() //устанавливает в качестве веб-сервера Kestrel. Хотя необязательно использовать именно Kestrel.
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()

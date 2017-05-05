@@ -9813,10 +9813,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Burhan\\OneDrive\\Developing\\GitHub\\ASP.NET-Core-Demo-Project\\Demo\\Demo\\Demo.csproj",
+      "projectUniqueName": "C:\\Users\\Burhan\\OneDrive\\Developing\\GitHub\\ASP.NET-Core-Demo-Project\\Demo\\Demo.csproj",
       "projectName": "Demo",
-      "projectPath": "C:\\Users\\Burhan\\OneDrive\\Developing\\GitHub\\ASP.NET-Core-Demo-Project\\Demo\\Demo\\Demo.csproj",
-      "outputPath": "C:\\Users\\Burhan\\OneDrive\\Developing\\GitHub\\ASP.NET-Core-Demo-Project\\Demo\\Demo\\obj\\",
+      "projectPath": "C:\\Users\\Burhan\\OneDrive\\Developing\\GitHub\\ASP.NET-Core-Demo-Project\\Demo\\Demo.csproj",
+      "outputPath": "C:\\Users\\Burhan\\OneDrive\\Developing\\GitHub\\ASP.NET-Core-Demo-Project\\Demo\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
