@@ -19,13 +19,14 @@ namespace Demo
              */
             var host = new WebHostBuilder()
                 .UseKestrel() //устанавливает в качестве веб-сервера Kestrel. Хотя необязательно использовать именно Kestrel.
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>()
+                .UseContentRoot(Directory.GetCurrentDirectory())//определяет каталог содержимого приложения
+                .UseIISIntegration()//Этот метод обеспечивает интеграцию приложения с веб-сервером IIS, через который по умолчанию перенаправляются запросы на сервер Kestrel. 
+                 //Однако также необязательно использовать этот метод, если мы не используем IIS.
+                .UseStartup<Startup>()//Этим вызовом устанавливается стартовый класс приложения - класс Startup
                 .UseApplicationInsights()
-                .Build();
+                .Build();//метод Build(), который собственно создает хост - объект IWebHost, в рамках которого развертывается веб-приложение.
 
-            host.Run();
+            host.Run();//В самом конце запускается приложение:
         }
     }
 }
