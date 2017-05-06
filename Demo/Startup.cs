@@ -45,6 +45,9 @@ namespace Demo
              Все сервисы приложения помещаются в коллекцию IServiceCollection, которая передается в качестве параметра в метод ConfigureServices(). 
              Для добавления сервиса в эту коллекцию применяется метод AddTransient():
             */
+
+            //Если сервис добавляется в методе ConfigureServices(), то мы сможем получить его через Dependency Injection
+            //конструктор: public TimerMiddleware(RequestDelegate next, TimeService timeService)
             services.AddTransient<TimeService>();
         }
 
