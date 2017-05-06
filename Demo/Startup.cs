@@ -34,6 +34,10 @@ namespace Demo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /*
+             Метод ConfigureServices() управляет добавлением сервисов в приложение. После добавления сервисы можно получить и использовать в любой части приложения.
+            Сам термин "сервис" в данном случае может представлять любой объект, функциональность которого может использоваться в приложении.
+             */
             // Add framework services.
             services.AddMvc();
         }
@@ -62,7 +66,7 @@ namespace Demo
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseToken();
+            app.UseToken("5454846");
 
             app.Map("/Developer", Developer);
 

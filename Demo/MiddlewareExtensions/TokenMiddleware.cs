@@ -11,15 +11,18 @@ namespace Demo
     {
         readonly RequestDelegate _next;
 
-        public TokenMiddleware(RequestDelegate next)
+        string _pattern;
+
+        public TokenMiddleware(RequestDelegate next, string pattern)
         {
             _next = next;
+            _pattern = pattern;
         }
 
         public async Task Invoke(HttpContext context)
         {
             var token = context.Request.Query["token"].ToString();
-            if (string.IsNullOrEmpty(token) || token != "123456")
+            if (string.IsNullOrEmpty(token) || token != _pattern)
             {
                 context.Response.StatusCode = StatusCodes.Status403Forbidden;
                 await context.Response.WriteAsync("Invalid token");
@@ -33,9 +36,14 @@ namespace Demo
 
     public static partial class Extensions
     {
-        public static IApplicationBuilder UseToken(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseToken(this IApplicationBuilder builder, string pattern)
         {
-            return builder.UseMiddleware<TokenMiddleware>();
+            /*
+              С помощью метода UseMiddleware<T> в конструктор объекта 
+              TokenMiddleware будет внедряться объект для параметра RequestDelegate next. 
+              Поэтому явным образом передавать значение для этого параметра нам не нужно.
+             */
+            return builder.UseMiddleware<TokenMiddleware>(pattern);
         }
     }
 }
