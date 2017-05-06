@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
+using Services;
 
 namespace Demo
 {
@@ -40,13 +41,15 @@ namespace Demo
              */
             // Add framework services.
             services.AddMvc();
+            services.AddTransient<TimeService>();
         }
 
         private static void Developer(IApplicationBuilder app)
         {
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Burhan Hasan");
+                TimeService timeService = app.ApplicationServices.GetService<TimeService>();
+                await context.Response.WriteAsync($"Burhan Hasan Time:{timeService.GetTime()}");
             });
         }
 
