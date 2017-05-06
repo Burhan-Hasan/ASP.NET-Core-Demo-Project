@@ -37,17 +37,29 @@ namespace Demo
         {
             /*
              Метод ConfigureServices() управляет добавлением сервисов в приложение. После добавления сервисы можно получить и использовать в любой части приложения.
-            Сам термин "сервис" в данном случае может представлять любой объект, функциональность которого может использоваться в приложении.
-             */
-            // Add framework services.
+             Сам термин "сервис" в данном случае может представлять любой объект, функциональность которого может использоваться в приложении.
+            */
             services.AddMvc();
+
+            /*
+             Все сервисы приложения помещаются в коллекцию IServiceCollection, которая передается в качестве параметра в метод ConfigureServices(). 
+             Для добавления сервиса в эту коллекцию применяется метод AddTransient():
+            */
             services.AddTransient<TimeService>();
         }
 
         private static void Developer(IApplicationBuilder app)
         {
+            /*
+             После добавления сервиса мы его можем получить и использовать в любой части приложения. 
+             В частности, мы его можем получить с помощью метода IApplicationBuilder.ApplicationServices.GetService:
+            */
             app.Run(async (context) =>
             {
+                /*
+                Причем объект IApplicationBuilder сам представляет собой сервис, только он добавляется по умолчанию самой системой. 
+                Так, если мы посмотрим в режиме отладки на коллекцию IServiceCollection, то сможем там увидеть порядка полтора десятка сервисов: 
+                */
                 TimeService timeService = app.ApplicationServices.GetService<TimeService>();
                 await context.Response.WriteAsync($"Burhan Hasan Time:{timeService.GetTime()}");
             });
