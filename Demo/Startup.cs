@@ -71,6 +71,10 @@ namespace Demo
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            /*
+             Oбъект IApplicationBuilder сам представляет собой сервис, только он добавляется по умолчанию самой системой. 
+             Так, если мы посмотрим в режиме отладки на коллекцию IServiceCollection, то сможем там увидеть порядка полтора десятка сервисов
+             */
             //IHostingEnvironment: позволяет взаимодействовать со средой, в которой запускается приложение
 
             //ILoggerFactory: предоставляет механизм логгирования в приложении
