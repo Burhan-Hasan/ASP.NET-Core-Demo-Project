@@ -64,7 +64,7 @@ namespace Demo
                 Так, если мы посмотрим в режиме отладки на коллекцию IServiceCollection, то сможем там увидеть порядка полтора десятка сервисов: 
                 */
                 TimeService timeService = app.ApplicationServices.GetService<TimeService>();
-                await context.Response.WriteAsync($"Burhan Hasan Time:{timeService.GetTime()}");
+                await context.Response.WriteAsync($"Time:{timeService.GetTime()}");
             });
         }
 
@@ -88,7 +88,7 @@ namespace Demo
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseToken("5454846");
+            app.UseToken("123456");
 
             app.Map("/Developer", Developer);
 
