@@ -24,12 +24,17 @@ namespace Demo
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
+                // мы можем использовать для конфигурации более чем одного файла:
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                //И если во втором файле есть настройки, которые имеют тот же ключ, что и настройки первого файла, 
+                //то происходит переопределение настроек: настройки из второго файла заменяют настройки первого.
                 .AddEnvironmentVariables();
+            // создаем конфигурацию
             Configuration = builder.Build();
         }
 
+        // свойство, которое будет хранить конфигурацию
         public IConfigurationRoot Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
