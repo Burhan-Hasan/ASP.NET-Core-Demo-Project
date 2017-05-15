@@ -29,7 +29,13 @@ namespace Demo
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 //И если во втором файле есть настройки, которые имеют тот же ключ, что и настройки первого файла, 
                 //то происходит переопределение настроек: настройки из второго файла заменяют настройки первого.
+
+                //С помощью метода AddEnvironmentVariables() в качестве источника конфигурации 
+                //можно добавить все переменные среды окружения, которые имеются на рабочей машине:
                 .AddEnvironmentVariables();
+            //И затем мы можем обращаться ко всем переменным среды:
+            // string java_dir = AppConfiguration["JAVA_HOME"];
+
             // создаем конфигурацию
             Configuration = builder.Build();
         }

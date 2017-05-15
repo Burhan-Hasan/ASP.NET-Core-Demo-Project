@@ -59,3 +59,51 @@ private static void About(IApplicationBuilder app)
     });
 }
 ```
+
+пример файла конфигурации
+```
+{
+  "color": "red",
+  "namespace": { "class": { "method": "AddJson" } }
+}
+```
+И чтобы обратиться к этой настройке, нам надо использовать знак двоеточия для обращения к иерархии настроек:
+```
+string text = AppConfiguration["namespace:class:method"];
+```
+
+###Объединение источников конфигурации
+####При необходимости мы можем использовать сразу несколько источников конфигурации:
+```
+public class Startup
+{
+    public Startup(IHostingEnvironment env)
+    {
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath);
+        builder.AddJsonFile("conf.json");
+        builder.AddEnvironmentVariables();
+        builder.AddInMemoryCollection(new Dictionary<string, string>
+        {
+            {"firstname", "Tom"},
+            {"age", "31"}
+        });
+ 
+        AppConfiguration = builder.Build();
+    }
+    public IConfiguration AppConfiguration { get; set; }
+ 
+    public void ConfigureServices(IServiceCollection services)
+    { }
+ 
+    public void Configure(IApplicationBuilder app)
+    {
+        var color = AppConfiguration["color"];  // определен в файле conf.json
+        string text = AppConfiguration["firstname"]; // определен в памяти
+        app.Run(async (context) =>
+        {
+            await context.Response.WriteAsync($"<p style='color:{color};'>{text}</p>");
+        });
+    }
+}
+```
