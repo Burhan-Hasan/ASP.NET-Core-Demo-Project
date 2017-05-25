@@ -19,7 +19,10 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\Build\Scripts\" />
+    <Folder Include="wwwroot\Build\Styles\" />
+    <Folder Include="wwwroot\Dev\Styles\" />
+    <Folder Include="wwwroot\Dev\Scripts\" />
   </ItemGroup>
 
 </Project>
