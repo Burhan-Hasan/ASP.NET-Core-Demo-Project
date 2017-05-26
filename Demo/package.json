@@ -1,0 +1,28 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "E-Commerce 2017",
+  "author": "Burhan",
+  "private": true,
+  "devDependencies": {
+    "@types/handlebars": "^4.0.32",
+    "@types/jquery": "^2.0.45",
+    "@types/node": "^7.0.18",
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-less": "^3.1.0",
+    "gulp-param": "^1.0.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-typescript": "^2.13.6",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "@types/core-js": "^0.9.37",
+    "@types/jquery": "^2.0.45",
+    "typings": "^2.1.0"
+  }
+}
