@@ -23,6 +23,7 @@
     <Folder Include="wwwroot\Build\Styles\" />
     <Folder Include="wwwroot\Dev\Styles\" />
     <Folder Include="wwwroot\Dev\Scripts\" />
+    <Folder Include="wwwroot\Content\" />
   </ItemGroup>
 
 </Project>

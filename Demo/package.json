@@ -1,7 +1,7 @@
 {
-  "name": "ecommerce",
+  "name": "chat",
   "version": "1.0.0",
-  "description": "E-Commerce 2017",
+  "description": "ASP.NET CORE DEMO CHAT PROJECT",
   "author": "Burhan",
   "private": true,
   "devDependencies": {
